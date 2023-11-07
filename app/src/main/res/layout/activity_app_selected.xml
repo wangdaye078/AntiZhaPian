@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_gray">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back" />
+
+    <ExpandableListView
+        android:id="@+id/recyclerview_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/colorWhite"
+        android:divider="@null"
+        android:groupIndicator="@null" />
+
+    <Button
+        android:id="@+id/btn_report"
+        style="@style/button"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:text="选择完成" />
+</FrameLayout>

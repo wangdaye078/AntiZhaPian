@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_title"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/dp_65"
+    android:background="@drawable/status_bar_bg"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="30.0dip"
+        android:layout_height="55.0dip"
+        android:layout_marginStart="5.0dip"
+        android:layout_marginTop="23.0dip"
+        android:paddingLeft="10.0dip"
+        android:paddingRight="10.0dip"
+        android:scaleType="fitCenter"
+        android:src="@drawable/back_bla_arrow" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_35"
+        android:ellipsize="end"
+        android:lines="1"
+        android:maxEms="12"
+        android:singleLine="true"
+        android:textColor="#ff1d1a33"
+        android:textSize="@dimen/sp_17" />
+
+    <TextView
+        android:id="@+id/tv_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dp_35"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:lines="1"
+        android:maxLength="15"
+        android:singleLine="true"
+        android:textColor="#ff1d1a33"
+        android:textSize="@dimen/sp_15"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="25.0dip"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:padding="5.0dip">
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+</RelativeLayout>

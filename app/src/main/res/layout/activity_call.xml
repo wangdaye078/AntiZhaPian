@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_gray"
+    android:descendantFocusability="beforeDescendants"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:background="@color/colorWhite" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_input_part"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical" />
+
+            <include
+                android:id="@+id/ly_select"
+                layout="@layout/layout_select_input" />
+
+            <include
+                android:id="@+id/ly_complete"
+                layout="@layout/layout_complete" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/page_gray">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="65.0dip"
+        android:scrollbars="none"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rl_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15.0dip"
+            android:paddingBottom="40.0dip"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <LinearLayout
+                android:id="@+id/ll_pross_bg"
+                android:layout_width="fill_parent"
+                android:layout_height="100.0dip"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginRight="20.0dip"
+                android:background="@drawable/iv_pross_bg"
+                android:orientation="vertical"
+                android:paddingLeft="13.0dip"
+                android:paddingRight="13.0dip"
+                app:layout_constraintLeft_toLeftOf="parent"
+                tools:ignore="MissingConstraints">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20.0dip"
+                    android:text="完善信息，遭遇诈骗我们能够更及时的帮助您"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/qb_px_15" />
+
+                <TextView
+                    android:id="@+id/tv_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10.0dip"
+                    android:text="已完善0%"
+                    android:textColor="@color/white"
+                    android:textSize="11.0sp" />
+
+                <ProgressBar
+                    android:id="@+id/pb_progress"
+                    style="?android:progressBarStyleHorizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_height="5.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:progress="0"
+                    android:progressDrawable="@drawable/progress_bg" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32.0dip"
+                android:layout_marginTop="20.0dip"
+                android:text="基础信息"
+                android:textColor="#ff333333"
+                android:textSize="14.0sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_pross_bg" />
+
+            <LinearLayout
+                android:id="@+id/ll_top_cointips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toRightOf="@id/tv_tips"
+                app:layout_constraintTop_toBottomOf="@id/ll_pross_bg">
+
+                <TextView
+                    android:id="@+id/tv_tips2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="完善基础信息"
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toRightOf="@id/tv_tips"
+                    app:layout_constraintTop_toBottomOf="@id/ll_pross_bg" />
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/ll_context"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20.0dip"
+                android:layout_marginTop="12.0dip"
+                android:layout_marginRight="20.0dip"
+                android:background="@drawable/bg_white_crop"
+                android:paddingLeft="20.0dip"
+                android:paddingRight="20.0dip"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_tips">
+
+                <TextView
+                    android:id="@+id/name_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="1.0dip"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="姓名："
+                    android:textColor="#ff000000"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="0.0dip"
+                    android:layout_height="0.0dip"
+                    android:gravity="center_vertical|end"
+                    app:layout_constraintBottom_toBottomOf="@id/name_label"
+                    app:layout_constraintLeft_toRightOf="@id/name_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/name_label">
+
+                    <TextView
+                        android:id="@+id/tv_idfine_var"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawablePadding="12dp"
+                        android:gravity="center"
+                        android:text="去身份认证"
+                        android:textColor="#2b4cff"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:drawableRightCompat="@mipmap/arrow_gray_right" />
+
+                    <TextView
+                        android:id="@+id/user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_8"
+                        android:gravity="end|center_vertical"
+                        android:lines="1"
+                        android:singleLine="true"
+                        android:textColor="#ff999999"
+                        android:textSize="@dimen/sp_14"
+                        app:layout_constrainedWidth="true" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_idfine_var"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/id_var_bg"
+                        android:gravity="center"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="2dp"
+                            android:src="@drawable/iv_var_ok" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="3dp"
+                            android:text="已身份认证"
+                            android:textColor="#3f5cff"
+                            android:textSize="10sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/div_line"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name_label" />
+
+                <TextView
+                    android:id="@+id/ID_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="1.0dip"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="证件号："
+                    android:textColor="#000000"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/name_label" />
+
+                <TextView
+                    android:id="@+id/user_ID"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:gravity="end|center_vertical"
+                    android:lines="1"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/ID_label"
+                    app:layout_constraintLeft_toRightOf="@+id/ID_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/ID_label" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/div_line"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ID_label" />
+
+                <TextView
+                    android:id="@+id/area_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="1.0dip"
+                    android:gravity="center_vertical"
+                    android:text="所在地区："
+                    android:textColor="#ff000000"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ID_label" />
+
+                <TextView
+                    android:id="@+id/area"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="30dp"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:ellipsize="end"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/to_select"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14"
+                    app:drawableRightCompat="@mipmap/arrow_gray_right"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="@id/area_label"
+                    app:layout_constraintLeft_toRightOf="@id/area_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/area_label" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/div_line"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/area_label" />
+
+                <TextView
+                    android:id="@+id/area_detail_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="1dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/area_detail"
+                    android:textColor="#000000"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/area_label" />
+
+                <TextView
+                    android:id="@+id/area_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginLeft="30dp"
+                    android:drawablePadding="@dimen/dp_10"
+                    android:ellipsize="end"
+                    android:gravity="end|center_vertical"
+                    android:hint="请填写详细地址"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/area_detail_label"
+                    app:layout_constraintLeft_toRightOf="@+id/area_detail_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/area_detail_label" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dip"
+                    android:background="@color/div_line"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/area_detail_label" />
+
+                <TextView
+                    android:id="@+id/reg_area_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:minHeight="35dp"
+                    android:text="注册地区："
+                    android:textColor="#000000"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/area_detail" />
+
+                <TextView
+                    android:id="@+id/reg_area"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:gravity="end|center_vertical"
+                    android:paddingBottom="15dp"
+                    android:text=""
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_14"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintLeft_toRightOf="@+id/reg_area_label"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/reg_area_label" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="-20dp">
+
+        <LinearLayout
+            android:id="@+id/update_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/update_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="266dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/update_bg" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginTop="-2dp"
+                android:background="@color/white" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:background="@drawable/bg_dialog_update"
+            app:layout_constraintBottom_toTopOf="@+id/update_close"
+            app:layout_constraintLeft_toLeftOf="@+id/update_ll"
+            app:layout_constraintRight_toRightOf="@+id/update_ll"
+            app:layout_constraintTop_toBottomOf="@+id/update_ll" />
+
+        <LinearLayout
+            android:id="@+id/update_title_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="@+id/update_ll"
+            app:layout_constraintTop_toBottomOf="@+id/update_ll">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="发现新版本"
+                android:textColor="#404a81"
+                android:textSize="@dimen/sp_16" />
+
+            <TextView
+                android:id="@+id/update_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/iv_user_tip"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:text="V1.0.0"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/update_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_25"
+            android:layout_marginRight="@dimen/dp_10"
+            android:gravity="left"
+            android:lineSpacingExtra="@dimen/dp_5"
+            android:text="1、举报APP增加APK文件上传\102、增加病毒库更新\103、录音文件，兼容oppo Android 6.0的路径"
+            android:textColor="@color/easy_touch_ball_menu_gray"
+            android:textSize="@dimen/sp_13"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintLeft_toLeftOf="@+id/update_ll"
+            app:layout_constraintRight_toRightOf="@+id/update_ll"
+            app:layout_constraintTop_toBottomOf="@+id/update_title_ll"
+            app:layout_goneMarginRight="@dimen/dp_25" />
+
+        <TextView
+            android:id="@+id/update"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginLeft="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_35"
+            android:layout_marginRight="@dimen/dp_25"
+            android:background="@drawable/shape_app_update"
+            android:gravity="center"
+            android:padding="@dimen/dp_5"
+            android:text="@string/update_btn_str"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            app:layout_constraintLeft_toLeftOf="@+id/update_ll"
+            app:layout_constraintRight_toRightOf="@+id/update_ll"
+            app:layout_constraintTop_toBottomOf="@+id/update_content" />
+
+        <ImageView
+            android:id="@+id/update_close"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_30"
+            android:scaleType="centerInside"
+            android:src="@mipmap/update_close"
+            android:visibility="invisible"
+            app:layout_constraintLeft_toLeftOf="@+id/update_ll"
+            app:layout_constraintRight_toRightOf="@+id/update_ll"
+            app:layout_constraintTop_toBottomOf="@+id/update" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

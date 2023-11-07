@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/rl_title_with_back" />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="请选择交易方式"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <com.nex3z.flowlayout.FlowLayout
+                android:id="@+id/flow_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/bg_white_crop"
+                android:paddingStart="30dp"
+                android:paddingEnd="0dp"
+                android:paddingBottom="20dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_acc_nomar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_white_crop"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp"
+                android:paddingEnd="15dp">
+
+                <TextView
+                    android:id="@+id/tv_acc_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:text="账户"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <EditText
+                    android:id="@+id/et_account"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:ellipsize="end"
+                    android:gravity="end|center_vertical"
+                    android:hint="请输入账户"
+                    android:maxLength="50"
+                    android:maxLines="1"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_15"
+                    android:autofillHints="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_acc_other"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:text="其他类型"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/bg_white_crop_head"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="0dp"
+                        android:text="其他交易类型"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_tag_other"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:gravity="end|center_vertical"
+                        android:hint="请输入其他交易类型名称"
+                        android:maxLength="12"
+                        android:singleLine="true"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/sp_15"
+                        android:autofillHints="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/bg_white_crop_foot"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="0dp"
+                        android:text="其他类型账户"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/et_account_other"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:ellipsize="end"
+                        android:gravity="end|center_vertical"
+                        android:hint="请输入账户"
+                        android:maxLines="1"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/sp_15"
+                        android:autofillHints="" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_commit"
+                style="@style/buttonCrop"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:text="确认添加" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

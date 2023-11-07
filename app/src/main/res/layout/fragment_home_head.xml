@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="76dp">
+
+    <ImageView
+        android:id="@+id/home_top_logo"
+        android:layout_width="31.0dip"
+        android:layout_height="34.0dip"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_30"
+        android:src="@drawable/ic_logo"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/home_top_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp5"
+        android:shadowColor="#000000"
+        android:shadowDx="0"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="@string/app_name"
+        android:textColor="#333333"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintBottom_toBottomOf="@+id/home_top_logo"
+        app:layout_constraintLeft_toRightOf="@+id/home_top_logo"
+        app:layout_constraintTop_toTopOf="@+id/home_top_logo" />
+
+    <FrameLayout
+        android:id="@+id/fl_note_view"
+        android:layout_width="wrap_content"
+        android:layout_height="40.0dip"
+        android:layout_marginEnd="15.0dip"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/home_top_logo">
+
+        <ImageView
+            android:id="@+id/tv_num_select"
+            android:layout_width="23.0dip"
+            android:layout_height="21.0dip"
+            android:layout_marginTop="5.0dip"
+            android:layout_marginEnd="5.0dip"
+            android:src="@drawable/iv_notice_msg" />
+
+        <TextView
+            android:id="@+id/tv_num_tip"
+            android:layout_width="12.0dip"
+            android:layout_height="12.0dip"
+            android:layout_gravity="end"
+            android:background="@drawable/bg_red"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="12.0sp"
+            android:visibility="invisible" />
+    </FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

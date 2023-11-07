@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back" />
+
+    <ScrollView
+        android:id="@+id/myScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/_f4f4f4"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pi_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:descendantFocusability="beforeDescendants"
+            android:focusable="true"
+            android:focusableInTouchMode="true">
+
+            <LinearLayout
+                android:id="@+id/ll_case_num"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:text="举报详情"
+                    android:textColor="@color/_535556"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:text="( 选填项 )"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/ll_dupery_type"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_case_num">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:text="*"
+                    android:textColor="@color/colorRed" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="15dp"
+                    android:text="诈骗类型"
+                    android:textColor="@color/_333333"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_dupery_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_100"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:drawablePadding="@dimen/dp_15"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/to_select"
+                    android:lines="2"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_16"
+                    app:drawableRightCompat="@mipmap/arrow_gray_right" />
+            </FrameLayout>
+
+            <View
+                android:id="@+id/report_dupery_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/div_line"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_dupery_type" />
+
+            <FrameLayout
+                android:id="@+id/ll_report_area"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/report_dupery_line">
+
+                <TextView
+                    android:id="@+id/region_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="举报地"
+                    android:textColor="@color/_333333"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/region"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_100"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:drawablePadding="@dimen/dp_15"
+                    android:gravity="end|center_vertical"
+                    android:hint="@string/to_select"
+                    android:lines="2"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_16"
+                    app:drawableRightCompat="@mipmap/arrow_gray_right" />
+            </FrameLayout>
+
+            <View
+                android:id="@+id/report_area_line"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/div_line"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_report_area" />
+
+            <FrameLayout
+                android:id="@+id/ll_case_des"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginEnd="@dimen/dp_15"
+                android:background="@color/white"
+                android:paddingStart="15dp"
+                android:paddingEnd="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/report_area_line">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="举报描述"
+                    android:textColor="@color/_333333"
+                    android:textSize="@dimen/sp_16"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/et_case_describe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/dp_100"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:drawablePadding="@dimen/dp_15"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:hint="@string/please_fill_it"
+                    android:maxEms="11"
+                    android:singleLine="true"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_16"
+                    app:drawableRightCompat="@mipmap/arrow_gray_right"/>
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_case_num2"
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:layout_marginStart="@dimen/dp_15"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="@dimen/dp_15"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_case_des">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="9dp"
+                    android:text="举报内容"
+                    android:textColor="@color/_535556"
+                    android:textSize="@dimen/sp_16" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="9dp"
+                    android:text="( 请至少填写一项 )"
+                    android:textColor="#999999"
+                    android:textSize="@dimen/sp_16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_context"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_15"
+                android:background="@color/white"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/ll_case_num2">
+
+                <include
+                    android:id="@+id/ly_call"
+                    layout="@layout/layout_elec_call" />
+
+                <include layout="@layout/layout_elec_line" />
+
+                <include
+                    android:id="@+id/ly_sms"
+                    layout="@layout/layout_elec_sms" />
+
+                <include layout="@layout/layout_elec_line" />
+
+                <include
+                    android:id="@+id/ly_app"
+                    layout="@layout/layout_elec_app" />
+
+                <include layout="@layout/layout_elec_line" />
+
+                <include
+                    android:id="@+id/ly_picture"
+                    layout="@layout/layout_elec_picture" />
+
+                <include layout="@layout/layout_elec_line" />
+
+                <include
+                    android:id="@+id/ly_audio"
+                    layout="@layout/layout_elec_audio" />
+
+                <include layout="@layout/layout_elec_video" />
+
+                <include
+                    android:id="@+id/ly_url"
+                    layout="@layout/layout_elec_url" />
+
+                <include layout="@layout/layout_elec_line" />
+
+                <include
+                    android:id="@+id/ly_contact"
+                    layout="@layout/layout_elec_contact" />
+
+                <include layout="@layout/layout_elec_line" />
+
+                <include
+                    android:id="@+id/ly_deal"
+                    layout="@layout/layout_elec_deal" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/_868686"
+                android:textSize="@dimen/sp_12"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ll_context" />
+
+            <TextView
+                android:id="@+id/tv_num_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="今日剩余可举报次数2次"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_attention" />
+
+            <Button
+                android:id="@+id/btn_commit"
+                style="@style/buttonCrop"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_45"
+                android:text="提交举报"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_num_tip" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

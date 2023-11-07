@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+
+    <View
+        android:id="@+id/view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@mipmap/ic_blue_bg_big"
+        android:paddingBottom="@dimen/dp_35"
+        app:layout_constraintBottom_toBottomOf="@id/space"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include android:id="@+id/pi_title" layout="@layout/rl_title_with_back_white" />
+
+    <ImageView
+        android:id="@+id/iv_circle"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dp_150"
+        android:background="@mipmap/ic_scan_rotate"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pi_title"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <ImageView
+        android:id="@+id/iv_circle_center"
+        android:layout_width="@dimen/dp_20"
+        android:layout_height="0dp"
+        android:background="@mipmap/ic_scan_center"
+        app:layout_constraintBottom_toBottomOf="@id/iv_circle"
+        app:layout_constraintDimensionRatio="22:38"
+        app:layout_constraintLeft_toLeftOf="@id/iv_circle"
+        app:layout_constraintRight_toRightOf="@id/iv_circle"
+        app:layout_constraintTop_toTopOf="@id/iv_circle"
+        app:layout_constraintWidth_percent="0.6" />
+
+    <android.widget.Space
+        android:id="@+id/space_safe_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_circle" />
+
+    <TextView
+        android:id="@+id/scan_result_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/dp_25"
+        android:paddingRight="@dimen/dp_25"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_17"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space_safe_1" />
+
+    <android.widget.Space
+        android:id="@+id/space_safe_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scan_result_tip" />
+
+    <TextView
+        android:id="@+id/scan_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_bg_blue_dark"
+        android:paddingLeft="@dimen/dp_25"
+        android:paddingRight="@dimen/dp_25"
+        android:text="开始检测"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space_safe_2" />
+
+    <android.widget.Space
+        android:id="@+id/space_safe_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scan_state" />
+
+    <android.widget.Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_30"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/space_safe_3" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/safe_space"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="space_safe_1, space_safe_2, space_safe_3" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_warn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_25"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_25"
+        app:layout_constraintTop_toBottomOf="@id/view_bg">
+
+        <ImageView
+            android:id="@+id/iv_app_warn"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@mipmap/ic_warn_app"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:text="APP预警"
+            android:textColor="#212a3d"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/iv_app_warn"
+            app:layout_constraintTop_toTopOf="@id/iv_app_warn" />
+
+        <TextView
+            android:id="@+id/tv_tip_warn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="识别并预警诈骗APP"
+            android:textColor="#8c99b1"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="@id/tv_app"
+            app:layout_constraintTop_toBottomOf="@id/tv_app" />
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switch_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp_15"
+            app:sb_checked="true"
+            app:sb_show_indicator="false"
+            app:layout_constraintBottom_toBottomOf="@id/iv_app_warn"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_app_warn" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@color/line_color"
+            app:layout_constraintTop_toBottomOf="@id/tv_tip_warn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        app:layout_constraintBottom_toTopOf="@id/stop_scan"
+        app:layout_constraintTop_toBottomOf="@id/cl_warn">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_app"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_app"
+                android:layout_width="21dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="@dimen/dp_8"
+                android:src="@mipmap/ic_scan_app"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/scan_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:text="等待检测应用"
+                android:textColor="@color/black_dark"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/iv_app"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/scan_app_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:text=""
+                android:textColor="@color/black_dark"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBaseline_toBaselineOf="@id/scan_app"
+                app:layout_constraintRight_toLeftOf="@id/iv_app_states" />
+
+            <ImageView
+                android:id="@+id/iv_app_states"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:src="@mipmap/ic_scan_wait"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_app"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_40"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_app"
+            app:layout_constraintVertical_bias="0" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_apk"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:padding="@dimen/dp_10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rv_app">
+
+            <ImageView
+                android:id="@+id/iv_apk"
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="@dimen/dp_10"
+                android:src="@mipmap/ic_scan_apk"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/scan_package"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="等待检测安装包"
+                android:textColor="@color/black_dark"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/iv_apk"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/scan_package_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:text=""
+                android:textColor="@color/black_dark"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintBaseline_toBaselineOf="@id/scan_package"
+                app:layout_constraintRight_toLeftOf="@id/iv_apk_states" />
+
+            <ImageView
+                android:id="@+id/iv_apk_states"
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="0dp"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:src="@mipmap/ic_scan_wait"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_apk"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/dp_30"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:overScrollMode="never"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_apk" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_safe_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/stop_scan"
+        app:layout_constraintTop_toBottomOf="@id/cl_warn">
+
+        <TextView
+            android:id="@+id/tv_safe_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_50"
+            android:layout_marginTop="@dimen/dp_20_h"
+            android:text="本次共为您检测"
+            android:textColor="@color/black_dark"
+            android:textSize="@dimen/sp_17" />
+
+        <TextView
+            android:id="@+id/tv_app_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_safe_label"
+            android:layout_alignStart="@id/tv_safe_label"
+            android:layout_marginTop="@dimen/dp_30"
+            android:text="72"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/sp_30"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_app_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_app_count"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_toEndOf="@id/tv_app_count"
+            android:text="个应用程序"
+            android:textColor="@color/black_dark"
+            android:textSize="@dimen/sp_17" />
+
+        <TextView
+            android:id="@+id/tv_package_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/tv_app_count"
+            android:layout_marginStart="@dimen/dp_25"
+            android:layout_toEndOf="@id/tv_app_tip"
+            android:text="12"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/sp_30"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_package_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_app_count"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_marginTop="@dimen/dp_30"
+            android:layout_toEndOf="@id/tv_package_count"
+            android:text="个安装包"
+            android:textColor="@color/black_dark"
+            android:textSize="@dimen/sp_17" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_risk_result"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/ly_rbl"
+        app:layout_constraintTop_toBottomOf="@id/cl_warn">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview_risk"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:background="@color/colorWhite"
+            android:overScrollMode="never" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/stop_scan"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_25"
+        android:layout_marginRight="@dimen/dp_25"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:background="@drawable/button_bg_them"
+        android:gravity="center"
+        android:text="开始检测"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/sp_15"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <include
+		android:id="@+id/ly_rbl"
+        layout="@layout/layout_risk_btn_blue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

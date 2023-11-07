@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_gray"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/con_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_15"
+                android:background="@drawable/bg_white_crop"
+                android:paddingTop="@dimen/dp_25"
+                android:paddingBottom="@dimen/dp_25"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/iv_ic_qa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:src="@mipmap/ic_feedback_qa"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:text="如何删除已发布的信息？"
+                    android:textColor="#292d39"
+                    android:textSize="@dimen/sp_17"
+                    android:textStyle="bold"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toRightOf="@+id/iv_ic_qa"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_30"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:lineSpacingExtra="3dp"
+                    android:text="暂不支持删除已举报的信息，国家反诈中心APP将严格保护举报人的权益，不泄露举报人的任何个人信息。举报人应当实事求是，保证所举报内容与事实一致。"
+                    android:textColor="#1d1a33"
+                    android:textSize="@dimen/sp_15"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_question" />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_2"
+                    android:layout_marginTop="@dimen/dp_45"
+                    android:background="@drawable/shape_line"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_answer" />
+
+                <TextView
+                    android:id="@+id/tv_solve_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:text="此回答是否解决您的问题："
+                    android:textColor="#525b71"
+                    android:textSize="14sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/line" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.5" />
+
+                <LinearLayout
+                    android:id="@+id/ll_solve"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_15"
+                    android:layout_marginTop="@dimen/dp_25"
+                    android:layout_marginEnd="@dimen/dp_20"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_bg_gray_light_25"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_25"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_25"
+                    android:paddingBottom="@dimen/dp_10"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/guideline"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_solve_label">
+
+                    <ImageView
+                        android:id="@+id/iv_solve"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:src="@mipmap/ic_solve_normal" />
+
+                    <TextView
+                        android:id="@+id/tv_solve_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="已解决"
+                        android:textColor="#1d1a33"
+                        android:textSize="@dimen/sp_16" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_not_solve"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:layout_marginEnd="@dimen/dp_15"
+                    android:background="@drawable/button_bg_gray_light_25"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/dp_25"
+                    android:paddingTop="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_25"
+                    android:paddingBottom="@dimen/dp_10"
+                    app:layout_constraintBottom_toBottomOf="@+id/ll_solve"
+                    app:layout_constraintLeft_toRightOf="@+id/guideline"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <ImageView
+                        android:id="@+id/iv_not_solve"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:src="@mipmap/ic_not_solve_normal" />
+
+                    <TextView
+                        android:id="@+id/tv_not_solve_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/dp_5"
+                        android:gravity="center"
+                        android:text="未解决"
+                        android:textColor="#1d1a33"
+                        android:textSize="@dimen/sp_16" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/tv_go_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_35"
+                android:textColor="#525b71"
+                android:textSize="14sp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/con_layout" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_15"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_2"
+                android:src="@mipmap/arrow_gray_right"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_go_feedback"
+                app:layout_constraintLeft_toRightOf="@+id/tv_go_feedback"
+                app:layout_constraintTop_toTopOf="@+id/tv_go_feedback" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

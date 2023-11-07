@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/sp_bg" />
+    <item android:top="50.0dip">
+        <bitmap
+            android:gravity="top"
+            android:src="@drawable/iv_welcome_center" />
+    </item>
+    <item android:bottom="50.0dip">
+        <bitmap
+            android:gravity="bottom|center"
+            android:src="@drawable/iv_welcome_botm" />
+    </item>
+</layer-list>

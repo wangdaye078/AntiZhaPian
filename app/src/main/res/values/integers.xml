@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
+    <integer name="design_snackbar_text_max_lines">1</integer>
+    <integer name="IndustryActivityRequestCode">3</integer>
+	<integer name="block_canary_max_stored_count">200</integer>
+</resources>

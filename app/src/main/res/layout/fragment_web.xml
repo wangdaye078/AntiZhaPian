@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/webview_activity_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_virtual_web"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/home_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="image"
+            app:srcCompat="@drawable/dashboard" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_web_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/layout_network_no" />
+
+        <LinearLayout
+            android:id="@+id/web_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/rl_title_with_back"
+        android:visibility="gone" />
+
+    <ProgressBar
+        android:id="@+id/pro_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_5"
+        android:max="100"
+        android:progress="0"
+        android:progressDrawable="@drawable/web_view_loading"
+        android:visibility="gone" />
+</FrameLayout>

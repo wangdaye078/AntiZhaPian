@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_gray">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_open"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2d4aeb"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/dp_50">
+
+        <include android:id="@+id/pi_title" layout="@layout/rl_title_with_white" />
+
+        <android.widget.Space
+            android:id="@+id/space_rotate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.01"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pi_title" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_likeanim"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_150"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space_rotate"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <android.widget.Space
+            android:id="@+id/space_content"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.01"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lottie_likeanim" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预警守护中"
+            android:textColor="@color/colorWhite"
+            android:textSize="22sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space_content" />
+
+        <TextView
+            android:id="@+id/tv_content_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="准确识别电信网络诈骗"
+            android:textColor="@color/transparent_white"
+            android:textSize="@dimen/sp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_content" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_layout_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout_open"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="-30dp"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@drawable/bg_white_crop"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_15">
+
+        <android.widget.Space
+            android:id="@+id/space_call"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.04"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_call"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_15"
+            android:src="@mipmap/ic_warn_call"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space_call" />
+
+        <TextView
+            android:id="@+id/tv_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:text="来电预警"
+            android:textColor="#212a3d"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/iv_call"
+            app:layout_constraintTop_toTopOf="@+id/iv_call" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="准确识别并预警诈骗来电"
+            android:textColor="#8c99b1"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_call"
+            app:layout_constraintTop_toBottomOf="@+id/tv_call" />
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switch_call"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp_15"
+            app:sb_show_indicator="false"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_call"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_call" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_layout_sms"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cl_layout_call"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@drawable/bg_white_crop"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_15">
+
+        <android.widget.Space
+            android:id="@+id/space_sms"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_sms"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginStart="@dimen/dp_15"
+            android:src="@mipmap/ic_warn_sms"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/space_sms" />
+
+        <TextView
+            android:id="@+id/tv_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:text="短信预警"
+            android:textColor="#212a3d"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@+id/iv_sms"
+            app:layout_constraintTop_toTopOf="@+id/iv_sms" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="准确识别并预警诈骗短信"
+            android:textColor="#8c99b1"
+            android:textSize="@dimen/sp_13"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_sms"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sms" />
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switch_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp_15"
+            app:sb_show_indicator="false"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_sms"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_sms" />
+
+        <android.widget.Space
+            android:id="@+id/space_app"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.05"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_sms" />
+
+        <ImageView
+            android:id="@+id/iv_app"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@mipmap/ic_warn_call"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/iv_sms"
+            app:layout_constraintTop_toBottomOf="@+id/space_app" />
+
+        <TextView
+            android:id="@+id/tv_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_15"
+            android:text="APP预警"
+            android:textColor="#212a3d"
+            android:textSize="@dimen/sp_15"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintLeft_toRightOf="@+id/iv_app"
+            app:layout_constraintTop_toTopOf="@+id/iv_app" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="准确识别并预警诈骗APP"
+            android:textColor="#8c99b1"
+            android:textSize="@dimen/sp_13"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/tv_app"
+            app:layout_constraintTop_toBottomOf="@+id/tv_app" />
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/switch_app"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/dp_25"
+            android:visibility="gone"
+            app:sb_show_indicator="false"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_app"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_app" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/tv_go_permission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cl_layout_sms"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_15"
+        android:background="@drawable/button_bg_blue_gradient"
+        android:gravity="center"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingBottom="@dimen/dp_10"
+        android:text="立即开启"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18" />
+</RelativeLayout>

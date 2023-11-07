@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:clipChildren="false">
+
+    <include android:id="@+id/pi_title" layout="@layout/rl_title_with_white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/bg_corner_white_bottom"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_15"
+        android:paddingBottom="@dimen/dp_20"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_media_type">
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_130"
+            android:layout_marginTop="@dimen/dp_30"
+            android:background="@mipmap/ic_bg_check_fraud_et"
+            android:gravity="start"
+            android:hint="请输入或粘贴银行卡号或支付账户"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingTop="@dimen/dp_15"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_30"
+            android:textColor="@color/fraud_result_color"
+            android:textColorHint="@color/fraud_result_color_light"
+            android:textSize="@dimen/sp_15"
+            android:autofillHints="" />
+
+        <ImageView
+            android:id="@+id/iv_clear"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_gravity="end"
+            android:layout_marginTop="-30dp"
+            android:clickable="true"
+            android:padding="@dimen/dp_8"
+            android:src="@mipmap/ic_check_fraud_clear" />
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_35"
+            android:background="@drawable/button_bg_them"
+            android:gravity="center"
+            android:text="立即查询"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/sp_15" />
+
+        <LinearLayout
+            android:id="@+id/ll_scan"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/shape_blue_25"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/qb_px_17"
+                android:layout_height="@dimen/qb_px_17"
+                android:src="@mipmap/ic_erweima" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:text="二维码图片查询"
+                android:textColor="#2a4bff"
+                android:textSize="@dimen/sp_15" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_count_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_25"
+            android:gravity="center_horizontal"
+            android:text="今日剩余可查询次数"
+            android:textColor="@color/fraud_result_color_light"
+            android:textSize="@dimen/sp_12" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_media_type"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_35"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/bg_fraud_radio_up"
+        android:clipChildren="false"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pi_title">
+
+        <RadioButton
+            android:id="@+id/rb_pay"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@mipmap/ic_fraud_radio_left"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="支付账户"
+            android:textColor="@color/black_dark"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rb_url"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="IP/网址"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/rb_chat"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/qb_px_40"
+            android:layout_gravity="bottom"
+            android:layout_weight="1"
+            android:background="@null"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="QQ/微信"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <ImageView
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_1"
+        android:src="@mipmap/ic_warn"
+        app:layout_constraintLeft_toLeftOf="@id/warn_txt"
+        app:layout_constraintTop_toTopOf="@id/warn_txt" />
+
+    <TextView
+        android:id="@+id/warn_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:lineSpacingExtra="@dimen/dp_5"
+        android:text="      该结果只作为账户查询的辅助结果，如需进一步确认，建议综合其他工具或咨询民警"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

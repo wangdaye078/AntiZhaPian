@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dp"
+    android:paddingStart="0dp"
+    android:paddingEnd="@dimen/dp_10">
+
+    <LinearLayout
+        android:id="@+id/ll_type"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingTop="10dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp"
+        app:layout_constraintBottom_toBottomOf="@id/ly_qa"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.35">
+
+        <TextView
+            android:id="@+id/type_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black_dark"
+            android:textSize="@dimen/sp_15" />
+
+        <ImageView
+            android:id="@+id/iv_type_arrow"
+            android:layout_width="@dimen/dp_18"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:rotation="180"
+            android:src="@mipmap/ic_arrow_down" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_content_1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/dp_15"
+        android:lineSpacingExtra="5dp"
+        android:minHeight="@dimen/dp_35"
+        android:paddingStart="12dp"
+        android:paddingEnd="0dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/_525B71"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toRightOf="@id/ll_type"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="@dimen/dp_15"
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp"
+        android:src="@mipmap/arrow_gray_right"
+        app:layout_constraintBottom_toBottomOf="@id/tv_content_1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_content_1" />
+
+    <include
+        android:id="@+id/ly_qa"
+        layout="@layout/layout_qa"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toRightOf="@+id/ll_type"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_content_1" />
+
+    <LinearLayout
+        android:id="@+id/ly_content_more"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_1"
+        android:orientation="vertical"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintLeft_toRightOf="@id/ll_type"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ly_qa" />
+
+    <View
+        android:id="@+id/middle_line_v"
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="0dp"
+        android:background="@color/line_color"
+        app:layout_constraintBottom_toBottomOf="@id/ly_content_more"
+        app:layout_constraintLeft_toRightOf="@id/ll_type"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/botton_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_marginTop="10dp"
+        android:background="@color/line_color"
+        app:layout_constraintTop_toBottomOf="@id/middle_line_v" />
+</androidx.constraintlayout.widget.ConstraintLayout>

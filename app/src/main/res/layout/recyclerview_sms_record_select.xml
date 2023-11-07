@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_sms"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_sms_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toStartOf="@+id/tv_time"
+        android:text="123123123123123231"
+        android:textColor="@color/_030303" />
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:paddingStart="0dp"
+        android:paddingEnd="@dimen/dp_15"
+        android:text="7/30 10:05:12"
+        android:textColor="@color/_a3a3a3"/>
+
+    <LinearLayout
+        android:id="@+id/ll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_sms_phone"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_10"
+        android:paddingEnd="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_sms_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:lines="2"
+            android:maxLines="2"
+            android:minLines="1"
+            android:text="【极速贷】骗短信骗过吗 小编每年会收到二三百条诈骗短信 每次点开 都能闻到一股走路…"
+            android:textColor="@color/_a3a3a3" />
+
+        <ImageView
+            android:id="@+id/iv_edit"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/ic_edit"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/iv_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_10"
+            android:padding="@dimen/dp_5"
+            android:src="@mipmap/clear" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/ll_layout"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/eeeeee" />
+</RelativeLayout>

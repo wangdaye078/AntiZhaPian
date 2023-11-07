@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/page_gray">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back_feedback" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pi_title">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_15">
+
+            <View
+                android:id="@+id/v_bg"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginBottom="@dimen/dp_23"
+                android:background="@drawable/bg_feedback"
+                app:layout_constraintBottom_toBottomOf="@id/tv_feedback"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_ic"
+                android:layout_width="@dimen/dp_35"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_20"
+                android:src="@mipmap/ic_feedback"
+                app:layout_constraintBottom_toBottomOf="@id/tv_label_small"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_label" />
+
+            <TextView
+                android:id="@+id/tv_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_35"
+                android:text="意见反馈"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_17"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_ic"
+                app:layout_constraintTop_toTopOf="@id/v_bg" />
+
+            <TextView
+                android:id="@+id/tv_label_small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginTop="5dp"
+                android:text="关于使用国家反诈中心遇到的问题和改进建议"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/sp_13"
+                app:layout_constraintLeft_toRightOf="@id/iv_ic"
+                app:layout_constraintTop_toBottomOf="@id/tv_label" />
+
+            <Button
+                android:id="@+id/tv_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_45"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_35"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/bg_shadow"
+                android:gravity="center"
+                android:text="我要反馈"
+                android:textColor="@color/_525B71"
+                android:textSize="@dimen/sp_15"
+                app:layout_constraintTop_toBottomOf="@id/tv_label_small" />
+
+            <ImageView
+                android:id="@+id/iv_ic_qa"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/dp_25"
+                android:src="@mipmap/ic_feedback_qa"
+                app:layout_constraintBottom_toBottomOf="@id/tv_question"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tv_question" />
+
+            <TextView
+                android:id="@+id/tv_question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="常见问题"
+                android:textColor="@color/black_dark"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@id/iv_ic_qa"
+                app:layout_constraintTop_toBottomOf="@id/tv_feedback" />
+
+            <LinearLayout
+                android:id="@+id/ll_qa_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:background="@drawable/bg_white_crop"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/tv_question" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

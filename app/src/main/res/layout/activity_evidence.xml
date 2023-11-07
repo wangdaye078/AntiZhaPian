@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back" />
+
+    <EditText
+        android:id="@+id/ed_describe"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="请详细描述举报对象的非法可疑行为"
+        android:maxLength="500"
+        android:padding="@dimen/dp_15"
+        android:textSize="16sp"
+        android:autofillHints="" />
+
+    <Button
+        android:id="@+id/btn_commit"
+        style="@style/button"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:text="填写完成" />
+</LinearLayout>

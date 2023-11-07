@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_home_top_bg">
+
+    <include
+        android:id="@+id/pi_title"
+        layout="@layout/rl_title_with_back_white" />
+
+    <TextView
+        android:id="@+id/tv_shadow"
+        android:layout_width="270dp"
+        android:layout_height="@dimen/dp_50_h"
+        android:background="@drawable/shadow_shape"
+        app:layout_constraintBottom_toBottomOf="@+id/rg_media_type"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rg_media_type" />
+
+    <RadioGroup
+        android:id="@+id/rg_media_type"
+        android:layout_width="250dp"
+        android:layout_height="@dimen/qb_px_32"
+        android:layout_marginTop="@dimen/dp_10_h"
+        android:background="@drawable/ic_bg_blue_dark"
+        android:minWidth="@dimen/dp_100"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/chronometer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pi_title">
+
+        <RadioButton
+            android:id="@+id/audio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/record_radio_bg_right"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="录音"
+            android:textColor="@drawable/font_blue_color"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/video"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/record_radio_bg_right"
+            android:button="@null"
+            android:checked="false"
+            android:gravity="center"
+            android:text="录屏"
+            android:textColor="@drawable/font_blue_color"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/mask_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/rg_media_type"
+        app:layout_constraintLeft_toLeftOf="@+id/rg_media_type"
+        app:layout_constraintRight_toRightOf="@+id/rg_media_type"
+        app:layout_constraintTop_toTopOf="@+id/rg_media_type" />
+
+    <Chronometer
+        android:id="@+id/chronometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_15_h"
+        android:background="@drawable/shape_red_white"
+        android:gravity="center"
+        android:paddingLeft="15dp"
+        android:paddingTop="@dimen/dp_5"
+        android:paddingRight="15dp"
+        android:paddingBottom="@dimen/dp_5"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16"
+        app:layout_constraintBottom_toTopOf="@+id/iv_circle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_media_type"
+        tools:ignore="NotSibling" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/qb_px_160"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/dp_5_h"
+        app:layout_constraintBottom_toTopOf="@+id/cl_bottom"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer">
+
+        <ImageView
+            android:id="@+id/iv_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.2" />
+
+        <ImageView
+            android:id="@+id/iv_audio_record"
+            android:layout_width="29dp"
+            android:layout_height="39dp"
+            android:src="@drawable/iv_audio_record"
+            app:layout_constraintCircle="@+id/iv_circle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_video_record"
+            android:layout_width="37dp"
+            android:layout_height="26dp"
+            android:src="@drawable/iv_video_record"
+            android:visibility="gone"
+            app:layout_constraintCircle="@+id/iv_circle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:id="@+id/fl_recording"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintCircle="@+id/iv_circle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="37dp"
+                android:layout_height="26dp"
+                android:src="@drawable/iv_recording" />
+
+            <ImageView
+                android:id="@+id/iv_recording_dot"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/iv_recording_dot" />
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_circle"
+        tools:ignore="NotSibling">
+
+        <ImageView
+            android:id="@+id/iv_tip_help"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:src="@drawable/iv_tip_help"
+            app:layout_constraintBottom_toTopOf="@+id/ll_recyclerview"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread_inside" />
+
+        <TextView
+            android:id="@+id/tv_how_screen_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:text="如何录屏/录音？"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_tip_help"
+            app:layout_constraintLeft_toRightOf="@+id/iv_tip_help"
+            app:layout_constraintTop_toTopOf="@+id/iv_tip_help" />
+
+        <TextView
+            android:id="@+id/tv_open_float_window"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_30"
+            android:text="开启浮窗"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_tip_help"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/iv_tip_help" />
+
+        <com.suke.widget.SwitchButton
+            android:id="@+id/swicth_settings"
+            android:layout_width="45dp"
+            android:layout_height="27dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            app:sb_background="#b9c0e6"
+            app:sb_show_indicator="false"
+            app:sb_button_color="#eaeaea"
+            app:sb_uncheck_color="#eaeaea"
+            app:sb_checked_color="@color/white"
+            app:sb_checked="false"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_open_float_window"
+            app:layout_constraintRight_toLeftOf="@+id/tv_open_float_window"
+            app:layout_constraintTop_toTopOf="@+id/tv_open_float_window" />
+
+        <LinearLayout
+            android:id="@+id/ll_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/share_bg_style"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_tip_help">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:padding="10dp"
+                android:text="录制记录"
+                android:textColor="#333333"
+                android:textSize="15sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_nodata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_no_permission" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="当前暂无录制记录"
+                    android:textColor="#999999"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

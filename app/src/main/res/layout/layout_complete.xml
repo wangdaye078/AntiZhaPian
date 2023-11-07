@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_commit_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_25"
+        android:text="最多可添加20条举报电话"
+        android:textColor="@color/colorGray"
+        android:textSize="@dimen/sp_12" />
+
+    <Button
+        android:id="@+id/btn_commit"
+        style="@style/button"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:text="确定" />
+</LinearLayout>

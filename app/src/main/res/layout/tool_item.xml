@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_item"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingTop="5dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="60dp">
+
+        <ImageView
+            android:id="@+id/iv_icon"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/tv_survey"
+            android:layout_width="25dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="32dp"
+            android:background="@drawable/bg_survey"
+            android:gravity="center"
+            android:text="现勘"
+            android:textColor="@color/white"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/red_dot"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/bg_oval_red"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:lines="2"
+        android:text="身份验真"
+        android:textColor="#1c283f"
+        android:textSize="13sp" />
+</LinearLayout>
